@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Agenda inteligente</title>
+</head>
+
+<body>
+    <h1>Bienvenido a tu Agenda Inteligente</h1>
+    <div class="divPedido">
+        <button class="btnPedido" type="button" id="btnModal">Crear tarea</button>
+    </div>
+    <div id="tvesModal" class="modalContainer">
+        <div id='contenido' class="modal-content">
+            <span id='close' class="close">×</span>
+            <form id="formPadre" action="" class="formPadre">
+                    <div class="divListados">
+                        <select name="listing" id="listSelect">
+                        </select>
+                    </div>
+                <div class="formCliente">
+                    <input class="formInput" type="text" id="nombreCliente" placeholder="Asunto">
+                </div>
+                <fieldset class="formPedidos">
+                    <textarea id="detallesTarea" cols="30" rows="10" placeholder="Detalles"></textarea>
+                </fieldset>
+                <div class="formHora">
+                    <p> Hora de entrega:
+                        <input type="time" name="formHora" id="horaEntrega">
+                    </p>
+                </div>
+                <div class="formChecks">
+                    <label for="entregado">Listo</label>
+                    <input id="entregado" type="checkbox">
+                </div>
+                <button type="submit" class="guardarForm" id="closeForm">Guardar tarea</button>
+            </form>
+        </div>
+    </div>
+    <ul id="lista" class="lista">
+
+    </ul>
+
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
