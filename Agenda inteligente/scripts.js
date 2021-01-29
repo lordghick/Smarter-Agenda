@@ -1,3 +1,6 @@
+//Clase del inbox que se encarga del display de las tareas, como el tablero
+//al enlazar esto a una base de datos, esta clase deberá obtener .pedidos de sql
+
 class ListaPedidos {
     constructor(name) {
         this.name = name;
@@ -44,6 +47,7 @@ class ListaPedidos {
     }
 }
 
+//La clase de las tareas individualmente
 class Pedidos {
     constructor(categoria, asunto, detalles, hora, listo, index) {
         this.categoria = categoria;
@@ -119,8 +123,10 @@ function guardarEntrega(e) {
 function cargarTareas(){
     let listadoJSON = localStorage.getItem("listaDeTareas");
     let listado = JSON.parse(listadoJSON);
-    inbox.pedidos = listado;
-    inbox.renderPedidos(listaDom);
+    if(listado != null){
+        inbox.pedidos = listado;
+        inbox.renderPedidos(listaDom);
+    }
 }
 
 cargarTareas();
@@ -145,7 +151,7 @@ function listarCategorias() {
     }
 }
 
-// obtener el indice de pedidos
+// obtener el indice de cada pedidos
 
 function getPedidoIndex(e) {
     let pedidoItem = e.parentElement;
