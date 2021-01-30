@@ -1,0 +1,20 @@
+CREATE DATABASE smarteragenda;
+USE smarteragenda;
+CREATE TABLE usuarios (
+	id INT NOT NULL AUTO_INCREMENT,
+	nombre VARCHAR(25) NOT NULL UNIQUE,
+	email VARCHAR(255) NOT NULL UNIQUE,
+	password VARCHAR(255) NOT NULL,
+	fecha_registro DATETIME NOT NULL,
+	PRIMARY KEY(id)
+);
+CREATE TABLE tareas (
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id_usuario INT,
+	categoria INT NOT NULL,
+	asunto VARCHAR(255) NOT NULL,
+	detalles VARCHAR(2000) NOT NULL,
+	hora VARCHAR(25) NOT NULL,
+	prioridad INT NOT NULL,
+	FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);

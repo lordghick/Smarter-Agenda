@@ -1,0 +1,94 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+}
+
+/* Modal */
+
+.divPedido{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 3em 0 3em 0;
+}
+
+.btnPedido{
+    display: inline-block;
+    width: 30%;
+    height: 60px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    font-family: 'Pacifico', cursive;
+    padding-bottom: 15px;
+    background-color: white;
+    border: 4px solid black;
+}
+
+.padreModal{
+    display: block;
+}
+
+.modal-content {
+    top: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 1px solid lightgray;
+    width: 80vw;
+    transition: .4s ease top;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: .4s ease all;
+}
+
+.close:hover,
+ .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .4s ease all;
+}
+
+/* Lista */
+
+.lista{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.listado{
+    position: relative;
+    padding: 10px;
+    border: 1px solid black;
+    width: 30vw;
+    border-radius: 5px;
+    margin: 5px 0 5px 0;
+}
+
+.categoria{
+    display: inline;
+    position: absolute;
+    right: 5px;
+}
+
+.asunto{
+    display: inline;
+}
+
+.detalles{
+    margin: 20px 0 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.entregado-lista{
+    margin: 20px 0 10px 0;
+    font-size: 14px;
+}
