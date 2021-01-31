@@ -49,7 +49,26 @@ class ValidadorRegistro
         if (!$this->variable_iniciada($email)) {
             return "Debes proporcionar un email";
         } else {
-            $this->email = $email;
+            include_once 'app/conexion.inc.php';
+
+            Conexion::abrirConexion();
+            $conexion = Conexion::obtenerConexion();
+
+            $sql = "SELECT email FROM usuarios";
+            $sentencia = $conexion->prepare($sql);
+            $sentencia->execute();
+            $resultado = $sentencia->fetchAll();
+
+            if (count($resultado)) {
+                foreach ($resultado as $fila) {
+                    if ($fila['email'] == "$email") {
+                        PRINT "Este correo electrónico ya está en uso";
+                        return "Este correo electrónico ya está en uso";
+                    }else{
+                        $this->email = $email;
+                    }
+                }
+            }
         }
 
         return "";
@@ -59,8 +78,8 @@ class ValidadorRegistro
     {
         if (!$this->variable_iniciada($password1)) {
             return "Debes proporcionar una contraseña";
-        }else{
-            $this -> password = $password1;
+        } else {
+            $this->password = $password1;
         }
 
         return "";
@@ -77,6 +96,7 @@ class ValidadorRegistro
         }
 
         if ($password1 !== $password2) {
+            print "Las contraseñas no coinciden";
             return "Ambas contraseñas deben coincidir";
         }
 
@@ -93,9 +113,9 @@ class ValidadorRegistro
     }
     public function obtenerPassword()
     {
-        return $this ->password;
+        return $this->password;
     }
-    
+
     public function obtenerErrorEmail()
     {
         return $this->error_email;
@@ -124,10 +144,11 @@ class ValidadorRegistro
         }
     }
 
-    public function registroValido(){
-        if ($this -> error_nombre === "" && $this -> error_email === "" && $this -> error_password1 === "" && $this -> error_password2 ===""){
+    public function registroValido()
+    {
+        if ($this->error_nombre === "" && $this->error_email === "" && $this->error_password1 === "" && $this->error_password2 === "") {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
