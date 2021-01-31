@@ -13,6 +13,8 @@ function listarCategorias() {
     }
 }
 
+listarCategorias();
+
 // // obtener el indice de cada pedidos
 
 // function getPedidoIndex(e) {
@@ -21,6 +23,8 @@ function listarCategorias() {
 //     let pedidosItems = [...lista.querySelectorAll('.listado')];
 //     return pedidosItems.indexOf(pedidoItem);
 // }
+
+// ordenar el indice cuando se agrega o elimina una tarea
 
 // function ordenarContador(e) {
 //     for (let i = 0; i < e.pedidos.length; i++) {
@@ -42,5 +46,5 @@ function listarCategorias() {
 
 // listaDom.addEventListener('click', removerPedido)
 
-listarCategorias();
+
 
