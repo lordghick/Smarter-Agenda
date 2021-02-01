@@ -28,6 +28,7 @@ class RepositorioUsuario{
         if(isset($conexion)){
             try{
                 //el id no se inserta porque es auto_increment
+                //el NOW no se bindea, puede pasar directo
                 $sql = "INSERT INTO usuarios(nombre, email, password, fecha_registro) VALUES(:nombre, :email, :password, NOW())";
 
                 $nombre = $usuario -> getNombre();
@@ -49,5 +50,26 @@ class RepositorioUsuario{
         }
 
         return $usuarioInsertado;
+    }
+
+    public static function emailLogin($conexion, $email){
+            $usuario = null;
+
+            if(isset($conexion)){
+                try{
+                    include_once 'usuario.inc.php';
+                    $sql = "SELECT * FROM usuarios WHERE email = :email";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(':email', $email, PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetch();
+                    if($resultado){
+                        $usuario = new Usuario($resultado['id'], $resultado['nombre'], $resultado['email'], $resultado['password'], $resultado['fecha_registro']);
+                    }
+                }catch (PDOException $ex){
+
+                }
+            }
+        return $usuario;
     }
 }

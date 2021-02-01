@@ -13,7 +13,7 @@ class RepositorioTareas{
                 $resultado = $sentencia -> fetchAll();
                 if(count($resultado)){
                     foreach($resultado as $fila){
-                        $tareas[] = new Tarea($fila['id'], $fila['categoria'], $fila['asunto'], $fila['detalles'], $fila['hora'], $fila['prioridad']);
+                        $tareas[] = new Tarea($fila['id'], $fila['id_usuario'], $fila['categoria'], $fila['asunto'], $fila['detalles'], $fila['hora'], $fila['prioridad']);
                     }
                 }else{
                         print "No existen tareas";
@@ -25,11 +25,11 @@ class RepositorioTareas{
         }
     }
 
-    public static function insertarTarea($conexion, $tarea) {
+    public static function insertarTarea($conexion, $tarea, $idUsuario) {
         $tareaInsertada = false;
         if(isset($conexion)){
             try {
-                $sql = "INSERT INTO tareas(categoria, asunto, detalles, hora, prioridad) VALUES(:categoria, :asunto, :detalles, :hora, :prioridad)";
+                $sql = "INSERT INTO tareas(id_usuario, categoria, asunto, detalles, hora, prioridad) VALUES($idUsuario, :categoria, :asunto, :detalles, :hora, :prioridad)";
                 
                 $categoria = $tarea -> getCategoria();
                 $asunto = $tarea -> getAsunto();

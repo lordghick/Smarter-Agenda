@@ -1,6 +1,16 @@
 <?php
-//archivo para configurar la conexion la base de datos, reemplazar al final por los datos del hosting
-$nombreServidor = 'localhost';
-$nombreUsuario = 'root';
-$password = '';
-$nombreBaseDatos = 'smarteragenda';
+//Direcciones
+
+$index = 'index.php';
+$welcome = 'welcome.php';
+$Correcto = '../index.php';
+$logout = 'app/logout.php';
+$salida = '../welcome.php';
+
+//anteriormente configuraba estos datos desde acá, pero por algun error ya no funciona y tuve que ponerlos directamente
+
+// $nombreServidor = 'localhost';
+// $nombreUsuario = 'root';
+// $passwordServidor = '';
+// $nombreBaseDatos = 'smarteragenda';
+

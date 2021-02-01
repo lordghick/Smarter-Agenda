@@ -54,23 +54,19 @@ class ValidadorRegistro
             Conexion::abrirConexion();
             $conexion = Conexion::obtenerConexion();
 
-            $sql = "SELECT email FROM usuarios";
+            $sql = "SELECT email FROM usuarios WHERE email = :email";
             $sentencia = $conexion->prepare($sql);
+            $sentencia->bindParam(':email', $email, PDO::PARAM_STR);
             $sentencia->execute();
-            $resultado = $sentencia->fetchAll();
-
-            if (count($resultado)) {
-                foreach ($resultado as $fila) {
-                    if ($fila['email'] == "$email") {
-                        PRINT "Este correo electrónico ya está en uso";
-                        return "Este correo electrónico ya está en uso";
-                    }else{
-                        $this->email = $email;
-                    }
-                }
+            $resultado = $sentencia->fetch();
+            
+            if ($resultado) {
+                print "Este correo electrónico ya está en uso";
+                return "Este correo electrónico ya está en uso";
+            } else {
+                $this->email = $email;
             }
         }
-
         return "";
     }
 

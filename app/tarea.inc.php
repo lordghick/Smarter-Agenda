@@ -2,14 +2,16 @@
 
 class Tarea {
     private $id;
+    private $idUsuario;
     private $categoria;
     private $asunto;
     private $detalles;
     private $hora;
     private $prioridad;
 
-    public function __construct($id, $categoria, $asunto, $detalles, $hora, $prioridad){
+    public function __construct($id, $idUsuario, $categoria, $asunto, $detalles, $hora, $prioridad){
         $this -> id = $id;
+        $this -> idUsuario = $idUsuario;
         $this -> categoria = $categoria;
         $this -> asunto = $asunto;
         $this -> detalles = $detalles;
@@ -19,6 +21,9 @@ class Tarea {
 
     public function getId(){
         return $this -> id;
+    }
+    public function getIdUsuario(){
+        return $this -> idUsuario;
     }
     public function getCategoria(){
         return $this -> categoria;
