@@ -9,14 +9,17 @@ class ValidadorLogin
     public function __construct($email, $password, $conexion)
     {
         $this->error = "";
-        if (!$this->variable_iniciada($email) || !$this->variable_iniciada($password)) {
+        if (!$this->variable_iniciada($email)) {
             $this->usuario = null;
-            $this->error = "Debes introducir tus datos";
-        } else {
+            $this->error = "Debes introducir un correo";
+        } else if (!$this->variable_iniciada($password)) {
+            $this->usuario = null;
+            $this->error = "Debes introducir tu contraseña";
+        }else{
             $this->usuario = RepositorioUsuario::emailLogin($conexion, $email);
 
             if (is_null($this->usuario) || !password_verify($password, $this->usuario->getPassword())) {
-                $this->error = "Datos incorrectos";
+                $this->error = "Usuario o contraseña inválida";
             }
         }
     }

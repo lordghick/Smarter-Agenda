@@ -22,6 +22,4 @@ if (ControlSesion::sesionIniciada()) {
 
         Conexion::cerrarConexion();
     }
-} else {
-    echo "Nada que llega";
 }

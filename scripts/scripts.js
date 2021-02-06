@@ -15,3 +15,9 @@ function listarCategorias() {
 
 listarCategorias();
 
+//prevent default
+
+function Handler(e){
+    e.preventDefault;
+}
+

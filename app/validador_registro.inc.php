@@ -49,7 +49,7 @@ class ValidadorRegistro
         if (!$this->variable_iniciada($email)) {
             return "Debes proporcionar un email";
         } else {
-            include_once 'app/conexion.inc.php';
+            include_once 'conexion.inc.php';
 
             Conexion::abrirConexion();
             $conexion = Conexion::obtenerConexion();
@@ -61,7 +61,6 @@ class ValidadorRegistro
             $resultado = $sentencia->fetch();
             
             if ($resultado) {
-                print "Este correo electrónico ya está en uso";
                 return "Este correo electrónico ya está en uso";
             } else {
                 $this->email = $email;
@@ -83,17 +82,15 @@ class ValidadorRegistro
 
     private function validar_password2($password1, $password2)
     {
-        if (!$this->variable_iniciada($password1)) {
-            return "Primero debes rellenar la contraseña";
+        if(!$this->variable_iniciada($password1)) {
+            return "Debes escribir una contraseña";
         }
-
         if (!$this->variable_iniciada($password2)) {
             return "Debes repetir tu contraseña";
         }
 
         if ($password1 !== $password2) {
-            print "Las contraseñas no coinciden";
-            return "Ambas contraseñas deben coincidir";
+            return "Las contraseñas no coinciden";
         }
 
         return "";
