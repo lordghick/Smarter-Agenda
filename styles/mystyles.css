@@ -162,7 +162,7 @@ body {
     border: 1px solid rgb(0, 255, 0);
 }
 
-.erroresRegistro{
+.erroresRegistro{ /* div donde va el error en el panel de registro */
     width: 100%;
     display: flex;
     flex-wrap: wrap;
