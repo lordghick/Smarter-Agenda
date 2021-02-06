@@ -21,7 +21,9 @@
                 <div>
                     <input class="input-registro" type="password" id="password2" placeholder="Repita su contraseña" name="password2">
                 </div>
-                <button class="btn" type="submit" class="guardarForm" name="enviar">Registrar usuario</button>
+                <div class="btn-registro">
+                <button class="btn" type="submit" name="enviar">Registrar usuario</button>
+                </div>
             </form>
         </div>
         <div class="erroresRegistro">
