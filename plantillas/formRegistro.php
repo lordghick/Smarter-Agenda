@@ -4,10 +4,16 @@
             <h1 class="main-tittle">Bienvenido a tu Agenda Inteligente</h1>
             <form class="form" method="POST" action="welcome.php">
                 <div>
-                    <input class="input-registro" type="text" id="nombre" placeholder="Nombre completo" name="nombre">
+                    <input class="input-registro" type="text" id="nombre" placeholder="Nombre completo" name="nombre" value="<?php
+                    if(isset($_POST['enviar'])){
+                        echo $_POST['nombre'];
+                    } ?>">
                 </div>
                 <div>
-                    <input class="input-registro" type="email" id="email" placeholder="Correo electrónico" name="email">
+                    <input class="input-registro" type="email" id="email" placeholder="Correo electrónico" name="email" value="<?php
+                    if(isset($_POST['enviar'])){
+                        echo $_POST['email'];
+                    } ?>">
                 </div>
                 <div>
                     <input class="input-registro" type="password" id="password1" placeholder="Contraseña" name="password1">

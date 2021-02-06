@@ -57,7 +57,7 @@ if (ControlSesion::sesionIniciada()) {
     <link rel="stylesheet" href="styles/mystyles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
-    <title>Recibimiento</title>
+    <title>Bienvenida</title>
 </head>
 
 <body>
