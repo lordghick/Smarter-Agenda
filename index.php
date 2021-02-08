@@ -1,4 +1,6 @@
-<!-- Borrador HTMl para testeo -->
+<?php
+    include_once 'app/conexion.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,7 +25,12 @@
 
     <!-- Y acá abajo deberían ser listadas las tareas  -->
     <ul id="lista" class="lista">
-
+    <?php
+    include_once 'app/mostrarTareas.inc.php';
+    Conexion :: abrirConexion();
+    MostrarTareas :: obtenerTareas();
+    Conexion :: cerrarConexion();
+    ?>
     </ul>
 
 

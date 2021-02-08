@@ -54,4 +54,26 @@ class RepositorioTareas{
         return $tareaInsertada;
     }
 
+    public static function obtenerTareasPropias($conexion, $idUsuario){
+        $entradas = [];
+        if(isset($conexion)){
+            try{
+                $sql = "SELECT * FROM tareas WHERE id_usuario='$idUsuario' ORDER BY id ASC";
+                $sentencia = $conexion -> prepare($sql);
+                $sentencia -> execute();
+                $resultado = $sentencia -> fetchAll();
+                if(count($resultado)){
+                    foreach($resultado as $fila){
+                        $entradas[] = new Tarea(
+                            $fila['id'], $fila['id_usuario'], $fila['categoria'], $fila['asunto'], $fila['detalles'], $fila['hora'], $fila['prioridad']
+                        );
+                    }
+                }
+            }catch (PDOException $ex){
+                print "ERROR" . $ex->getMessage();
+            }
+        }
+        return $entradas;
+    }
+
 }
