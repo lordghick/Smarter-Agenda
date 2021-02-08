@@ -10,7 +10,7 @@
 
 
 <nav>
-<h1>Bienvenido a tu Agenda Inteligente<?php echo ' ' . $_SESSION['nombreUsuario'];?></h1>
+<h1>Bienvenido a tu Smarter Agenda<?php echo ' ' . $_SESSION['nombreUsuario'];?></h1>
   <div>
     <ul>
       <li>

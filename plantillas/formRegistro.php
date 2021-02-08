@@ -1,7 +1,7 @@
 <main class="main-central">
     <div class="container-form">
         <div class="form-container">
-            <h1 class="main-tittle">Bienvenido a tu Agenda Inteligente</h1>
+            <h1 class="main-tittle">Bienvenido a tu Agenda Inteligente!</h1>
             <form class="form" method="POST" action="welcome.php">
                 <div>
                     <input class="input-registro" type="text" id="nombre" placeholder="Nombre completo" name="nombre" value="<?php
