@@ -9,12 +9,12 @@
 ?>
 
 
-<nav>
-<h1>Bienvenido a tu Smarter Agenda<?php echo ' ' . $_SESSION['nombreUsuario'];?></h1>
+<nav class="main-nav"> 
+  <h1 class="nav-tittle main-tittle">Bienvenido<?php echo ' ' . $_SESSION['nombreUsuario'];?></h1>
   <div>
     <ul>
       <li>
-        <a href="<?php echo $logout ?>">Cerrar Sesion</a>
+        <a class="link-cerrarsesion" href="<?php echo $logout ?>">Cerrar Sesion</a>
       </li>
     </ul>
   </div>

@@ -21,3 +21,20 @@ function Handler(e){
     e.preventDefault;
 }
 
+//Modal
+
+let modal = document.getElementById('modalContainer'),
+modalContenido = document.getElementById('modalNuevaTarea');
+
+function mostrarModal(){
+    modal.style.visibility = 'visible';
+    modal.style.opacity = '1';
+    modalContenido.style.top = '10%';
+}
+
+function cerrarModal(){
+    modal.style.visibility = 'hidden';
+    modal.style.opacity = '0';
+    modalContenido.style.top = '-100%';
+}
+

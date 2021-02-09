@@ -1,11 +1,12 @@
-<div>
-    <div>
+<div id="modalContainer" class="modalContainer">
+    <div id="modalNuevaTarea" class="modalNuevaTarea">
+        <button type="button" id="cerrarModal" onclick="cerrarModal()">X</button>
         <form method="post" action="app/tareaNueva.php">
             <div>
                 <select id="listSelect" name="categoria"></select>
             </div>
             <div>
-                <input type="text" id="asunto" placeholder="Asunto" name="asunto">
+                <input type="text" id="asunto" placeholder="Asunto" name="asunto" required>
             </div>
             <div>
                 <textarea cols="30" rows="10" placeholder="Detalles" name="detalles"></textarea>

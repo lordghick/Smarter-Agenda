@@ -20,7 +20,7 @@ class MostrarTareas
         if (isset($tarea)) {
 ?>
 
-            <div class="listado">
+            <div class="card">
                 <h4 class="categoria"><?php echo $tarea -> getCategoria();?></h4>
                 <div class="asunto">
                     <h3><?php echo $tarea -> getAsunto(); ?></h3>

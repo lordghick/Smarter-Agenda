@@ -26,6 +26,14 @@ h1 {
 
 }
 
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
 .main-central {
     width: 100%;
     height: 100vh;
@@ -164,7 +172,7 @@ h1 {
     flex-direction: column;
     position: absolute;
     bottom: 0;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 100px;
 }
@@ -183,5 +191,101 @@ h1 {
     width: 80%;
 }
 
+/* Modal nueva tarea */
 
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
 
+.menu-aside{
+    height: 100vh;
+    width: 15%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.596);
+
+}
+
+.main-view{
+    width: 85%;
+    padding: 0;
+    margin: 0 0 0 15%;
+
+    
+}
+
+.logo-container{
+    width: 100%;
+    height: 72px;
+    background-color: rgb(28, 161, 161);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+    width: 100%;
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.438);
+    padding: 0 20px;
+
+}
+
+.link-cerrarsesion{
+    color: rgb(28, 161, 161);
+    font-family: 'Roboto', 'sans-serif';
+    font-weight: bold;
+}
+
+.modalContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.596);
+    visibility: hidden;
+    opacity: 0;
+    transition: .1s ease all;
+    z-index: 1;
+}
+.modalNuevaTarea{
+    display: flex;
+    position: absolute;
+    top: -100%;
+    width: 80%;
+    height: 80%;
+    background-color: rgb(28, 161, 161);
+    z-index: 2;
+    transition: .3s ease all;
+}
+
+.nav-tittle {
+    font-weight: lighter;
+}
+
+.main-view {
+    background-color: rgb(195, 199, 199);
+}
+
+.lista {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+}
+
+.card {
+    border: 1px solid black;
+    height: 320px;
+    flex-basis: calc(25% - 40px);
+    margin: 10px;
+}
