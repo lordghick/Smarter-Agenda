@@ -11,7 +11,7 @@
                 <textarea cols="30" rows="10" placeholder="Detalles" name="detalles"></textarea>
             </div>
             <div>
-                <p> Hora de entrega:
+                <p> Hora asignada:
                     <input type="time" name="hora">
                 </p>
             </div>
