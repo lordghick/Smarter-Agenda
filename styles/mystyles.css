@@ -280,12 +280,12 @@ a{
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .card {
     border: 1px solid black;
     height: 320px;
     flex-basis: calc(25% - 40px);
-    margin: 10px;
+    margin-bottom: 10px;
 }
