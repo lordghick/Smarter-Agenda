@@ -20,7 +20,7 @@ input:focus{
     outline: none;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Lobster', cursive, sans-serif;
     font-size: 48px;
 
@@ -32,6 +32,14 @@ li {
 
 a{
     text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+p, a{
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-central {
@@ -216,11 +224,12 @@ a{
 
 .logo-container{
     width: 100%;
-    height: 72px;
+    height: 10vh;
     background-color: rgb(28, 161, 161);
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 1px 3px rgba(0, 0, 0, 0.438);
 }
 
 .main-nav{
@@ -228,7 +237,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 72px;
+    height: 10vh;
     width: 100%;
     box-shadow: 1px 3px rgba(0, 0, 0, 0.438);
     padding: 0 20px;
@@ -272,20 +281,183 @@ a{
 }
 
 .main-view {
-    background-color: rgb(195, 199, 199);
+    background-image: url(../img/fondo-smarter-agenda.jpg);
+    background-size: cover;
+    background-position: center center;
 }
 
 .lista {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 50px 20px 20px 20px;
     justify-content: space-evenly;
+    overflow-y: scroll; 
+    height: 90vh;
 }
 
 .card {
-    border: 1px solid black;
-    height: 320px;
-    flex-basis: calc(25% - 40px);
-    margin-bottom: 10px;
+    height: 200px;
+    flex-basis: calc(40% - 40px);
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color : #FFF;
+	-webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+    /* text-align: center; */
+    border-radius: 15px;
+    /* justify-items: center; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-mark {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    display: inline-block;
+    height: 60px;
+    width: 45px;
+}
+
+.asunto-tittle {
+    font-size: 24px;
+}
+
+/* marcadores */
+
+.urgente, .importante, .completado{
+    font-size: 3em;
+}
+
+.urgente{
+    color: #a20a0a;
+}
+
+.importante{
+    color: #ffe227;
+}
+
+.completado{
+    color: #799351;
+}
+
+/* fondo de cards */
+
+.general{
+    background-color: #ffc75f;
+}
+
+.trabajo{
+    background-color: rgb(0, 171, 214);
+}
+
+.personal{
+    background-color: #845ec2;
+}
+
+.divHora {
+    background-color: white;
+    width: 40%;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+	box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+}
+
+.detalles {
+    max-height: 40%;
+}
+
+.p-detalles {
+    overflow: hidden;
+}
+
+.principal-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+    border-radius: 10px;
+    background: black;
+    padding: 10px;
+}
+
+.principal-btn > button {
+    font-size: 1.5em;
+    color: rgb(28, 161, 161);
+    background: none;
+    border: none;
+    margin: 0 10px;
+    font-weight: lighter;
+    transition: 0.3s ease all;
+}
+
+.principal-btn > button:hover {
+    font-size: 2em;
+    transition: 0.2s ease all;
+}
+
+.add:hover {
+    color: rgb(53, 233, 53);
+}
+
+.edit:hover {
+    color: yellow;
+}
+
+.remove:hover {
+    color: red;
+}
+
+.fa-sign-out-alt {
+    margin-left: 5px;
+}
+
+.fas-categories {
+    margin-right: 5px;
+}
+
+.categories-container {
+    height: 400px;
+    width: 100%;
+    padding: 5px 5px 5px 15px;
+}
+
+.link-categories {
+    color: white;
+    line-height: 50px;
+}
+
+.fa-user{
+    color: rgb(28, 161, 161);
+}
+
+.fa-briefcase{
+    color: #D66033;
+}
+
+.fa-university {
+    color: #E8D699;
+}
+
+.fa-futbol {
+    color: black;
+}
+
+.fa-smile {
+    color: yellow;
+}
+
+.btnSeleccionado{
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }

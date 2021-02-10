@@ -14,7 +14,7 @@
   <div>
     <ul>
       <li>
-        <a class="link-cerrarsesion" href="<?php echo $logout ?>">Cerrar Sesion</a>
+        <a class="link-cerrarsesion" href="<?php echo $logout ?>">Cerrar Sesion<i class="fas fa-sign-out-alt"></i></a>
       </li>
     </ul>
   </div>

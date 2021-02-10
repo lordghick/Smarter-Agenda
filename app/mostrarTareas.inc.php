@@ -20,25 +20,38 @@ class MostrarTareas
         if (isset($tarea)) {
 ?>
 
-            <div class="card">
-                <h4 class="categoria"><?php echo $tarea -> getCategoria();?></h4>
+            <div class="card <?php                     
+                    if($tarea -> getCategoria() == 0){
+                        echo 'general';
+                    }else if($tarea -> getCategoria() == 1){
+                        echo 'personal';
+                    }else if($tarea -> getCategoria() == 2){
+                        echo 'trabajo';
+                    } ?>">
+                <div class="container-mark">
+                <i class="fas fa-bookmark <?php
+                    if($tarea -> getPrioridad() == 1){
+                        echo 'urgente';
+                    }else if($tarea -> getPrioridad() == 2){
+                        echo 'importante';
+                    }else if($tarea -> getPrioridad() == 3){
+                        echo 'completado';
+                    }
+                    ?>"></i> 
+                </div>
+                
                 <div class="asunto">
-                    <h3><?php echo $tarea -> getAsunto(); ?></h3>
+                    <h3 class="asunto-tittle"><?php echo $tarea->getAsunto(); ?></h3>
                 </div>
                 <div class="detalles">
-                    <?php echo $tarea -> getDetalles(); ?>
+                    <p class="p-detalles"><?php echo $tarea->getDetalles(); ?></p>
                 </div>
                 <div class="divHora">
-                    <h4><?php echo $tarea -> getHora(); ?></h4>
-                </div>
-                <div class="divPrioridad">
-                    <p><?php $tarea -> getPrioridad(); ?></p>
-                </div>
-                <div class="botones">
-                    <button type="button">Eliminar tarea</button>
-                    <button type="button">Editar tarea</button>
+                    <p><?php echo $tarea->getHora(); ?></p>
                 </div>
             </div>
+
+
 
 <?php
         } else {
