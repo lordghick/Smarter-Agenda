@@ -1,6 +1,26 @@
 <?php
 
+// class UsuarioActual {
+
+//     private $idUsuario;
+//     private $nombreUsuario;
+
+//     public function __construct($idUsuario, $nombreUsuario){
+//         $this -> idUsuario = $idUsuario;
+//         $this -> nombreUsuario = $nombreUsuario;
+//     }
+
+//     public function idActual(){
+//         return $this -> idUsuario;
+//     }
+
+//     public function nombreActual(){
+//         return $this -> nombreUsuario;
+//     }
+// }
+
 class ControlSesion{
+
     public static function IniciarSesion($idUsuario, $nombreUsuario){
         if(session_id() == ''){
             session_start();

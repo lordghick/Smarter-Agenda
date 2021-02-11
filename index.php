@@ -18,7 +18,7 @@ include_once 'app/mostrarTareas.inc.php';
 
     <div class="principal-btn">
             <button type="button" class="add" id="add" onclick="mostrarModal()"><i class="fas fa-plus"></i></button>
-            <button type="button" class="edit" id="edit" onclick="btnTarget(modificar)"><i class="fas fa-pen"></i></button>
+            <button type="button" class="edit" id="edit" onclick="modificar()"><i class="fas fa-pen"></i></button>
             <button type="button" class="remove" id="remove" onclick="eliminar()"><i class="fas fa-trash"></i></button>
     </div>
 
@@ -53,6 +53,7 @@ include_once 'app/mostrarTareas.inc.php';
             </div>
         </div>
     </main>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
     <script src="https://kit.fontawesome.com/12eb794d14.js" crossorigin="anonymous"></script>
     <script src="scripts/scripts.js"></script>
 </body>

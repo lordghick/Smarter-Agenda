@@ -37,48 +37,61 @@ function cerrarModal() {
     modal.style.opacity = '0';
     modalContenido.style.top = '-100%';
 }
+
+
 // funciones
 
 
-btnActivado = false 
-
+btnActivado = false
+btnCreado = [];
 
 function eliminar() {
-    console.log('quepasapueh')
     if (btnActivado == false) {
-        console.log('quepasapueh')
         let cards = document.getElementsByClassName('card');
-
         for (i = 0; i < cards.length; i++) {
-            let btnEliminar = document.createElement("div");
-            let icoEliminar = document.createElement("i");
-            icoEliminar.className = "fas fa-trash btnSeleccionado";
-            btnEliminar.appendChild(icoEliminar);
-            cards[i].appendChild(btnEliminar)
+            let ico = document.createElement("i");
+            ico.className = "fas fa-trash btnSeleccionado";
+            cards[i].appendChild(ico)
+            btnCreado[i] = ico;
+            ico.addEventListener('click', (e) =>{
+                let index = getIndex(e);
+                enviar(index);
+            })
         }
 
         btnActivado = true;
     }
 }
-let modificar = function (e) {
-    console.log('Pana');
+
+function modificar() {
+    if (btnActivado == false) {
+        let cards = document.getElementsByClassName('card');
+        for (i = 0; i < cards.length; i++) {
+            let ico = document.createElement("i");
+            ico.className = "fas fa-pen btnSeleccionado";
+            cards[i].appendChild(ico)
+            btnCreado[i] = ico;
+            ico.addEventListener('click', (e) =>{
+                let index = getIndex(e);
+                enviar(index);
+            })
+        }
+
+        btnActivado = true;
+    }
 }
 
 //obtener indice
 
 function getIndex(e) {
-    let pedidoItem = e.target;
-    console.log(pedidoItem)
-    let cName = pedidoItem.className;
-    console.log(cName)
-    let pedidosItems = [...document.getElementsByClassName(cName)];
-    console.log(pedidosItems.indexOf(pedidoItem));
-    return pedidosItems.indexOf(pedidoItem);
+    let tarea = e.target.parentElement;
+    let cards = [...document.getElementsByClassName('card')];
+    return cards.indexOf(tarea);
 }
 
-//prueba
-
-allCards = document.getElementById('lista');
-
-allCards.addEventListener('click', getIndex)
-
+function enviar(index)
+{
+    $.post("app/eliminarTareas.php",{"index":index},function(respuesta){
+        alert(respuesta);
+    });
+}
