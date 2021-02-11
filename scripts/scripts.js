@@ -91,7 +91,11 @@ function getIndex(e) {
 
 function enviar(index)
 {
-    $.post("app/eliminarTareas.php",{"index":index},function(respuesta){
-        alert(respuesta);
-    });
+    $.post("app/eliminarTareas.php", {"index":index}, removeDom(index));
+}
+
+function removeDom(index){
+    let cards = document.getElementsByClassName('card');
+    listado = document.getElementById('lista');
+    listado.removeChild(cards[index]);
 }

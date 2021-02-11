@@ -2,17 +2,20 @@
 
 include_once 'repositorioTareas.inc.php';
 include_once 'tarea.inc.php';
+include_once 'conexion.inc.php';
 
 class MostrarTareas
 {
     public static function obtenerTareas()
     {
+        Conexion :: abrirConexion();
         $entradas = RepositorioTareas::obtenerTareasPropias(Conexion::obtenerConexion(), $_SESSION['idUsuario']);
         if (count($entradas)) {
             foreach ($entradas as $tarea) {
                 self::escribirTarea($tarea);
             }
         }
+        Conexion :: cerrarConexion();
     }
 
     public static function escribirTarea($tarea)

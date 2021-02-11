@@ -46,9 +46,7 @@ include_once 'app/mostrarTareas.inc.php';
             <!-- en este UL se renderizan las tareas (mostrarTareas.inc.php)  -->
             <div id="lista" class="lista">
                 <?php
-                Conexion::abrirConexion();
                 MostrarTareas::obtenerTareas();
-                Conexion::cerrarConexion();
                 ?>
             </div>
         </div>
