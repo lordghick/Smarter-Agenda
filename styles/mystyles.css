@@ -476,6 +476,7 @@ textarea:focus {
     border-radius: 10px;
     background: black;
     padding: 10px;
+    z-index: 2;
 }
 
 .principal-btn > button {

@@ -1,8 +1,7 @@
 <?php
 include_once 'conexion.inc.php';
 include_once 'repositorioTareas.inc.php';
-include_once 'controlSesion.inc.php';
-include_once 'mostrarTareas.inc.php';
+
  session_start();
 
 if(isset($_POST["index"])){
