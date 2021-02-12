@@ -55,7 +55,7 @@ function eliminar() {
             btnCreado[i] = ico;
             ico.addEventListener('click', (e) =>{
                 let index = getIndex(e);
-                enviar(index);
+                eliminar(index);
             })
         }
 
@@ -89,7 +89,7 @@ function getIndex(e) {
     return cards.indexOf(tarea);
 }
 
-function enviar(index)
+function eliminar(index)
 {
     $.post("app/eliminarTareas.php", {"index":index}, removeDom(index));
 }
